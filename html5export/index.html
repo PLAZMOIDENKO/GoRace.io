@@ -90,9 +90,18 @@ body {
 	z-index: 1;
 }
 		</style>
-		<link id="-gd-engine-icon" rel="icon" type="image/png" href="4demo.icon.png" />
-<link rel="apple-touch-icon" href="4demo.apple-touch-icon.png"/>
-<link rel="manifest" href="4demo.manifest.json">
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+<link rel="manifest" href="index.manifest.json">
+<script>
+    const tg = window.Telegram.WebApp;
+    tg.ready();
+    const user_id = tg.initDataUnsafe.user.id;
+
+    window.setGodotUserId = function(godot) {
+        godot.receive_user_id(user_id);
+    };
+</script>
 
 	</head>
 	<body>
@@ -105,14 +114,14 @@ body {
 		</noscript>
 
 		<div id="status">
-			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="4demo.png" alt="">
+			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="index.png" alt="">
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
 
-		<script src="4demo.js"></script>
+		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"4demo","experimentalVK":false,"fileSizes":{"4demo.pck":213152,"4demo.wasm":43699190},"focusCanvas":true,"gdextensionLibs":[],"serviceWorker":"4demo.service.worker.js"};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":217568,"index.wasm":43699190},"focusCanvas":true,"gdextensionLibs":[],"serviceWorker":"index.service.worker.js"};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
